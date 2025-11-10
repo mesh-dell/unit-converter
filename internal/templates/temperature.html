@@ -1,0 +1,133 @@
+{{define "temperature"}}
+<h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+  Temperature Converter
+</h2>
+<form method="POST" action="/temperature" class="space-y-4">
+  <div
+    class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center"
+  >
+    <!-- Input Field -->
+    <input
+      type="number"
+      id="value"
+      step="any"
+      name="value"
+      placeholder="Enter value"
+      class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-700"
+      required
+    />
+
+    <!-- From Unit Select -->
+    <select
+      name="from"
+      class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-700"
+    >
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+  </div>
+  <div class="text-center text-gray-500 font-bold py-2">TO</div>
+
+  <div
+    class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center"
+  >
+    <!-- To Unit Select -->
+    <select
+      name="to"
+      class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-700"
+    >
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+
+    <!-- Convert Button -->
+    <button
+      type="submit"
+      class="w-full sm:w-1/2 bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 ease-in-out shadow-lg transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50"
+    >
+      Convert
+    </button>
+  </div>
+  <!-- Result Display -->
+  {{ if .Result }}
+  <div class="mt-6 p-4 bg-indigo-50 rounded-xl text-center shadow-inner">
+    <p class="text-lg font-medium text-indigo-800">
+      Conversion Result:
+      <span class="font-bold text-2xl text-indigo-900 ml-2">
+        {{ printf "%.2f" .Result}}
+      </span>
+    </p>
+  </div>
+  {{ end }}
+</form>
+{{end}} {{define "weight"}}
+<h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+  Weight Converter
+</h2>
+<form method="POST" action="/weight" class="space-y-4">
+  <div
+    class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center"
+  >
+    <!-- Input Field -->
+    <input
+      type="number"
+      id="value"
+      step="any"
+      name="value"
+      placeholder="Enter value"
+      class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-700"
+      required
+    />
+
+    <!-- From Unit Select -->
+    <select
+      name="from"
+      class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-700"
+    >
+      <option value="kilogram">Kilogram</option>
+      <option value="gram">Gram</option>
+      <option value="metric ton">Metric ton</option>
+      <option value="pound">Pound</option>
+      <option value="ounce">Ounce</option>
+    </select>
+  </div>
+  <div class="text-center text-gray-500 font-bold py-2">TO</div>
+
+  <div
+    class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center"
+  >
+    <!-- To Unit Select -->
+    <select
+      name="to"
+      class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-700"
+    >
+      <option value="kilogram">Kilogram</option>
+      <option value="gram">Gram</option>
+      <option value="metric ton">Metric ton</option>
+      <option value="pound">Pound</option>
+      <option value="ounce">Ounce</option>
+    </select>
+
+    <!-- Convert Button -->
+    <button
+      type="submit"
+      class="w-full sm:w-1/2 bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 ease-in-out shadow-lg transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50"
+    >
+      Convert
+    </button>
+  </div>
+  <!-- Result Display -->
+  {{ if .Result }}
+  <div class="mt-6 p-4 bg-indigo-50 rounded-xl text-center shadow-inner">
+    <p class="text-lg font-medium text-indigo-800">
+      Conversion Result:
+      <span class="font-bold text-2xl text-indigo-900 ml-2">
+        {{ printf "%.2f" .Result}}
+      </span>
+    </p>
+  </div>
+  {{ end }}
+</form>
+{{end}}
